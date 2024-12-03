@@ -4,7 +4,9 @@ using namespace std;
 
 int main() {
     int shippingType;
-
+    Package *package1;
+    TwoDayPackage *package2;
+    OvernightPackage *package3;
 
     cout << "Welcome to COP2334 Shipping" << endl << endl;
     cout << "Please Select a Shipping Option:" << endl << endl;
@@ -13,14 +15,26 @@ int main() {
     cout << "3. Overnight Shipping (3.00 per Oz)" << endl;
     cin >> shippingType;
     switch (shippingType) {
-        case 1: Package *package1 = new Package(); break;
-        case 2: TwoDayPackage *package2 = new TwoDayPackage(); break;
-        case 3: OvernightPackage *package3 = new OvernightPackage(); break;
+        case 1:
+            package1 = new Package;
+            package1->DisplayInfo();
+            package1->DisplayPrice();
+            package1->CalculateCost();
+        break;
+        case 2:
+            package2 = new TwoDayPackage;
+            package2->DisplayInfo();
+            package2->DisplayPrice();
+            package2->CalculateCost();
+        break;
+        case 3:
+            package3 = new OvernightPackage;
+            package3->DisplayInfo();
+            package3->DisplayPrice();
+            package3->CalculateCost();
+        break;
+        default:
+            cout << "Invalid Option" << endl << endl;
+        break;
     }
-    cout << "Please enter the shipping information:" << endl << endl;
-    cout << "Enter Recipient Name:" << endl;
-    getline(cin, );
-
-
-
 }

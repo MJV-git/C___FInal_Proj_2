@@ -30,7 +30,7 @@ class Package {
     void DisplayPrice() const;
 
     void DisplayWeight() const;
-    double CalculateCost() const;
+    void CalculateCost() const;
 
 };
 
