@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <ostream>
+#include <iomanip>
 
 Package::Package(): name("NULL"), address("NULL"), city("NULL"), state("NULL"), rName("NULL"), rAddress("NULL"), rCity("NULL"), rState("NULL"), zipcode(0), rZipcode(0){
     cout << "Please enter the shipping information:" << endl << endl;
@@ -36,6 +37,14 @@ Package::Package(): name("NULL"), address("NULL"), city("NULL"), state("NULL"), 
     cin >> weight;
 
 }
+TwoDayPackage::TwoDayPackage() {
+    setPricePerOz(1.5);
+}
+
+OvernightPackage::OvernightPackage() {
+    setPricePerOz(3.0);
+}
+
 
 void Package::setName(string n) {
     name=n;
@@ -90,7 +99,11 @@ void Package::DisplayInfo() const {
 
 void Package::DisplayPrice() const {
     cout << "----Package Price Information----" << endl << endl;
-    cout << "$" << pricePerOz << " Per Oz";
+    cout << "$" << pricePerOz << " Per Oz" << endl;
+}
+
+void Package::setPricePerOz(double p) {
+    pricePerOz = p;
 }
 
 void Package::DisplayWeight() const {
@@ -99,5 +112,6 @@ void Package::DisplayWeight() const {
 }
 
 void Package::CalculateCost() const {
-    cout << "Cost: $" << weight * pricePerOz << endl << endl;
+    cout << "Cost: $" << fixed << setprecision(2) <<  weight * pricePerOz << endl << endl;
 }
+

@@ -10,7 +10,7 @@ class Package {
     int zipcode, rZipcode;
 
     double weight = 0;
-    const double pricePerOz = 0.9;
+    double pricePerOz = 0.9;
 
     public:
     Package();
@@ -28,6 +28,7 @@ class Package {
 
     void DisplayInfo() const;
     void DisplayPrice() const;
+    void setPricePerOz(double p);
 
     void DisplayWeight() const;
     void CalculateCost() const;
@@ -35,13 +36,13 @@ class Package {
 };
 
 class TwoDayPackage : public Package {
-    private:
-    double pricePerOz = 1.5;
+    public:
+    TwoDayPackage();
 };
 
 class OvernightPackage : public Package {
-    private:
-    double pricePerOz = 3.0;
+    public:
+    OvernightPackage();
 };
 
 

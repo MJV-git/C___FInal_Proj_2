@@ -12,7 +12,7 @@ int main() {
     cout << "Please Select a Shipping Option:" << endl << endl;
     cout << "1. Standard Shipping ($0.90 per Oz)" << endl;
     cout << "2. 2 Day Delivery Shipping ($1.50 per Oz)" << endl;
-    cout << "3. Overnight Shipping (3.00 per Oz)" << endl;
+    cout << "3. Overnight Shipping ($3.00 per Oz)" << endl;
     cin >> shippingType;
     switch (shippingType) {
         case 1:
