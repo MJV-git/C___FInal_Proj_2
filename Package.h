@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-
+//declarations of variables
 class Package {
     private:
     string name, address, city, state,rName,rAddress,rCity, rState;
@@ -15,6 +15,7 @@ class Package {
     public:
     Package();
 
+    //setters for debugging
     void setName(string n);
     void setAddress(string a);
     void setCity(string c);
@@ -25,12 +26,14 @@ class Package {
     void setZipcode(int z);
     void setRZipcode(int rz);
 
-
+    //functions to display information about objects created
     void DisplayInfo() const;
     void DisplayPrice() const;
+    //function to modify price per oz private variable
     void setPricePerOz(double p);
-
+    //function to display weight
     void DisplayWeight() const;
+    //function to calculate cost
     void CalculateCost() const;
 
 };

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <ostream>
 #include <iomanip>
-
+//constructor for package objects
 Package::Package(): name("NULL"), address("NULL"), city("NULL"), state("NULL"), rName("NULL"), rAddress("NULL"), rCity("NULL"), rState("NULL"), zipcode(0), rZipcode(0){
     cout << "Please enter the shipping information:" << endl << endl;
     cout << "Enter Recipient Name:" << endl;
@@ -67,15 +67,16 @@ Package::Package(): name("NULL"), address("NULL"), city("NULL"), state("NULL"), 
     }
 
 }
+//constructor that inherits from package
 TwoDayPackage::TwoDayPackage() {
     setPricePerOz(1.5);
 }
-
+//constructor that inherits from package
 OvernightPackage::OvernightPackage() {
     setPricePerOz(3.0);
 }
 
-
+//function definitions
 void Package::setName(string n) {
     name=n;
 }
@@ -112,6 +113,7 @@ void Package::setRZipcode(int rz) {
     rZipcode=rz;
 }
 
+//display definitions
 void Package::DisplayInfo() const {
     cout << "----Package Sender Information----" << endl << endl;
     cout << "Name: " << name << endl;

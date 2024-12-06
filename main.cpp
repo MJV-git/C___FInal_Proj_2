@@ -4,22 +4,26 @@ using namespace std;
 
 /*Changelog since presentation:
  *CHANGES WILL BE MARKED WITH ########### COMMENT
+ *ADDED COMMENTS AND DOCUMENTATION
  *ADDED INPUT VALIDATION FOR ZIPCODES
  *ADDED INPUT VALIDATION FOR PACKAGE WEIGHT
  */
 
 int main() {
+    //declare shipping type variable for switch statement
     int shippingType;
+    //declare package variable pointers
     Package *package1;
     TwoDayPackage *package2;
     OvernightPackage *package3;
-
+    //user prompts
     cout << "Welcome to COP2334 Shipping" << endl << endl;
     cout << "Please Select a Shipping Option:" << endl << endl;
     cout << "1. Standard Shipping ($0.90 per Oz)" << endl;
     cout << "2. 2 Day Delivery Shipping ($1.50 per Oz)" << endl;
     cout << "3. Overnight Shipping ($3.00 per Oz)" << endl;
     cin >> shippingType;
+    //switch statement which creates new package object
     switch (shippingType) {
         case 1:
             package1 = new Package;
