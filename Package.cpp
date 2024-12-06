@@ -1,7 +1,3 @@
-//
-// Created by helve on 12/2/2024.
-//
-
 #include "Package.h"
 
 #include <iostream>
@@ -20,7 +16,18 @@ Package::Package(): name("NULL"), address("NULL"), city("NULL"), state("NULL"), 
     cout << "Enter Recipient State:" << endl;
     getline(cin, rState);
     cout << "Enter Recipient Zipcode:" << endl;
-    cin >> rZipcode;
+    //###################################################
+    while(true) {
+        cin >> rZipcode;
+        if (cin.fail() or rZipcode < 10000 or rZipcode > 99999) {
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a valid zipcode: " << endl;
+        }
+        else {
+            break;
+        }
+    }
     cout << "Enter Return Address Information:" << endl << endl;
     cout << "Enter Sender Name:" << endl;
     cin.ignore();
@@ -32,9 +39,32 @@ Package::Package(): name("NULL"), address("NULL"), city("NULL"), state("NULL"), 
     cout << "Enter Sender State:" << endl;
     getline(cin,state);
     cout << "Enter Sender Zipcode:" << endl;
-    cin >> zipcode;
+    //#####################################################
+    while(true) {
+        cin >> zipcode;
+        if (cin.fail() or zipcode < 10000 or zipcode > 99999) {
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a valid zipcode: " << endl;
+        }
+        else {
+            break;
+        }
+    }
     cout << "Enter Weight of Package(in Oz):" << endl;
-    cin >> weight;
+    //#######################################################
+    while(true) {
+        cin >> weight;
+        if (cin.fail() or weight < 0) {
+            cin.clear();
+            cin.ignore();
+            cout << "Please enter a valid weight: " << endl;
+        }
+        else {
+            break;
+        }
+
+    }
 
 }
 TwoDayPackage::TwoDayPackage() {
@@ -114,4 +144,6 @@ void Package::DisplayWeight() const {
 void Package::CalculateCost() const {
     cout << "Cost: $" << fixed << setprecision(2) <<  weight * pricePerOz << endl << endl;
 }
+
+
 

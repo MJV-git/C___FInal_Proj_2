@@ -2,6 +2,12 @@
 #include "Package.h"
 using namespace std;
 
+/*Changelog since presentation:
+ *CHANGES WILL BE MARKED WITH ########### COMMENT
+ *ADDED INPUT VALIDATION FOR ZIPCODES
+ *ADDED INPUT VALIDATION FOR PACKAGE WEIGHT
+ */
+
 int main() {
     int shippingType;
     Package *package1;
